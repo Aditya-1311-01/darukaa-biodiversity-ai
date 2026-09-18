@@ -1,0 +1,1618 @@
+{
+  "schema_version": "1.0",
+  "note": "Effect magnitudes are drawn from published ranges and MUST be checked against the primary source before submission. Every citation carries a `verified` flag; the API surfaces unverified figures as such.",
+  "interventions": [
+    {
+      "id": "legume_cover_crop",
+      "title": "Legume-based cover cropping in the fallow window",
+      "category": "soil_biology",
+      "what_to_do": "Sow a legume cover mix (sunn hemp, cowpea, horse gram) into the fallow window instead of leaving soil bare; terminate by rolling or shallow incorporation two weeks before the main crop.",
+      "preconditions": {
+        "soil_organic_carbon_pct": {
+          "max": 0.75
+        },
+        "land_use": [
+          "monoculture_crop",
+          "fallow",
+          "mixed_cropping",
+          "degraded_land"
+        ],
+        "rainfall_regime": [
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      "contraindications": {
+        "annual_rainfall_mm": {
+          "max": 300
+        }
+      },
+      "causal_chain": [
+        "bare-soil days reduced -> surface temperature and evaporation fall",
+        "root exudates + biomass return -> soil organic carbon rises",
+        "organic carbon rises -> aggregate stability and water holding capacity rise",
+        "moist, carbon-rich topsoil -> microbial and mesofaunal diversity rise",
+        "flowering legumes -> pollinator forage in an otherwise empty window"
+      ],
+      "why_it_works": "Soil organic carbon is not just a fertility number; it is the habitat variable for the soil food web. Bare fallow in semi-arid systems oxidises carbon fastest because surface temperature peaks with no canopy. A legume cover crop removes the bare-soil window, fixes nitrogen so the carbon that accumulates has a usable C:N ratio, and adds a flowering resource for pollinators at a time of year when the landscape offers none.",
+      "effects": [
+        {
+          "metric": "soil_organic_carbon",
+          "direction": "increase",
+          "magnitude": "+0.1-0.3 percentage points",
+          "horizon": "medium",
+          "confidence": "high"
+        },
+        {
+          "metric": "microbial_biomass_carbon",
+          "direction": "increase",
+          "magnitude": "+20-40%",
+          "horizon": "short",
+          "confidence": "medium"
+        },
+        {
+          "metric": "water_holding_capacity",
+          "direction": "increase",
+          "magnitude": "+5-15%",
+          "horizon": "medium",
+          "confidence": "medium"
+        },
+        {
+          "metric": "pollinator_visitation",
+          "direction": "increase",
+          "magnitude": "marked increase during bloom",
+          "horizon": "short",
+          "confidence": "medium"
+        },
+        {
+          "metric": "synthetic_nitrogen_demand",
+          "direction": "decrease",
+          "magnitude": "-20-40 kg N/ha",
+          "horizon": "short",
+          "confidence": "medium"
+        }
+      ],
+      "horizon": "medium",
+      "confidence": "high",
+      "trade_offs": "Consumes residual soil moisture. In years with under ~300 mm rainfall the cover crop can compete with the following main crop unless terminated early.",
+      "citations": [
+        {
+          "organisation": "FAO",
+          "title": "Soil Organic Carbon: the hidden potential",
+          "year": 2017,
+          "locator": "ch. 4",
+          "url": "https://www.fao.org/documents/card/en/c/25eaf720-94e4-4f53-8f50-cdfc2487e1f8/",
+          "verified": false
+        },
+        {
+          "organisation": "IPCC",
+          "title": "Special Report on Climate Change and Land, Ch. 4 Land Degradation",
+          "year": 2019,
+          "locator": "4.8",
+          "url": "https://www.ipcc.ch/srccl/",
+          "verified": false
+        }
+      ],
+      "search_query": "legume cover crop soil organic carbon microbial diversity semi-arid"
+    },
+    {
+      "id": "alley_cropping_agroforestry",
+      "title": "Alley cropping with nitrogen-fixing tree hedgerows",
+      "category": "agroforestry",
+      "what_to_do": "Plant hedgerows of Leucaena, Gliricidia or Faidherbia at 8-12 m spacing across the slope, cropping the alleys; prune twice a year and return the prunings as mulch.",
+      "preconditions": {
+        "land_use": [
+          "monoculture_crop",
+          "mixed_cropping",
+          "degraded_land",
+          "grazing_land"
+        ],
+        "tree_cover_pct": {
+          "max": 15
+        },
+        "area_hectares": {
+          "min": 0.4
+        }
+      },
+      "contraindications": {},
+      "causal_chain": [
+        "hedgerow canopy -> windspeed and evaporative demand at crop level fall",
+        "deep tree roots -> nutrients and water lifted from below the crop rooting zone",
+        "pruning mulch -> continuous carbon input to topsoil",
+        "permanent woody strips -> nesting and perching structure for birds and arthropods",
+        "linear habitat across the field -> reduced habitat fragmentation between remnant patches"
+      ],
+      "why_it_works": "In semi-arid croplands the binding constraint is usually water, not nutrients, and water losses are dominated by evaporation rather than transpiration. Hedgerows cut wind run and shade the soil surface, which changes the evaporation term directly. At the same time the woody strips are the only permanent vegetation in the system, so they carry the resident bird and predatory-arthropod community that annual crops cannot support, which in turn suppresses pest outbreaks.",
+      "effects": [
+        {
+          "metric": "soil_organic_carbon",
+          "direction": "increase",
+          "magnitude": "+0.2-0.5 percentage points",
+          "horizon": "long",
+          "confidence": "medium"
+        },
+        {
+          "metric": "bird_species_richness",
+          "direction": "increase",
+          "magnitude": "substantially higher than open monoculture",
+          "horizon": "medium",
+          "confidence": "medium"
+        },
+        {
+          "metric": "soil_moisture_retention",
+          "direction": "increase",
+          "magnitude": "+10-20%",
+          "horizon": "medium",
+          "confidence": "medium"
+        },
+        {
+          "metric": "above_ground_carbon_stock",
+          "direction": "increase",
+          "magnitude": "+5-30 t C/ha",
+          "horizon": "long",
+          "confidence": "medium"
+        },
+        {
+          "metric": "cropped_area",
+          "direction": "decrease",
+          "magnitude": "-10-15%",
+          "horizon": "short",
+          "confidence": "high"
+        }
+      ],
+      "horizon": "long",
+      "confidence": "medium",
+      "trade_offs": "Immediate loss of 10-15% cropped area and a 2-4 year establishment period before net benefit. Needs protection from grazing in year 1-2.",
+      "citations": [
+        {
+          "organisation": "ICRAF / CIFOR-ICRAF",
+          "title": "Agroforestry and biodiversity conservation in tropical landscapes",
+          "year": 2020,
+          "locator": "synthesis",
+          "url": "https://www.cifor-icraf.org/",
+          "verified": false
+        },
+        {
+          "organisation": "FAO",
+          "title": "Advancing Agroforestry on the Policy Agenda",
+          "year": 2013,
+          "locator": "sec. 2",
+          "url": "https://www.fao.org/3/i3182e/i3182e.pdf",
+          "verified": false
+        }
+      ],
+      "search_query": "alley cropping agroforestry biodiversity soil carbon semi-arid evaporation"
+    },
+    {
+      "id": "crop_diversification_intercrop",
+      "title": "Replace monoculture with a cereal-legume intercrop",
+      "category": "cropping_system",
+      "what_to_do": "Move from sole wheat/rice to a 2:1 or 4:2 row intercrop with a pulse (chickpea, pigeon pea, lentil) matched to the rainfall window.",
+      "preconditions": {
+        "land_use": [
+          "monoculture_crop"
+        ],
+        "rainfall_regime": [
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      "contraindications": {},
+      "causal_chain": [
+        "two root architectures -> soil profile explored at two depths",
+        "canopy closes earlier -> less bare soil evaporation and weed pressure",
+        "legume nitrogen fixation -> lower synthetic N -> less nitrate leaching",
+        "two flowering periods -> longer forage window for pollinators",
+        "structural and chemical diversity -> pest specialists diluted, natural enemies supported"
+      ],
+      "why_it_works": "Monoculture is a biodiversity problem and a risk problem at once. A single root architecture mines one soil layer, a single phenology gives one narrow forage window, and a single host makes specialist pests cheap to maintain. Intercropping changes all three at no land cost, and the land equivalent ratio in cereal-legume systems is typically above 1, so total productivity per hectare usually rises even when each component yields less.",
+      "effects": [
+        {
+          "metric": "land_equivalent_ratio",
+          "direction": "increase",
+          "magnitude": "1.1-1.4",
+          "horizon": "short",
+          "confidence": "high"
+        },
+        {
+          "metric": "arthropod_species_richness",
+          "direction": "increase",
+          "magnitude": "+20-50%",
+          "horizon": "short",
+          "confidence": "medium"
+        },
+        {
+          "metric": "synthetic_nitrogen_demand",
+          "direction": "decrease",
+          "magnitude": "-15-30%",
+          "horizon": "short",
+          "confidence": "medium"
+        },
+        {
+          "metric": "yield_variance",
+          "direction": "decrease",
+          "magnitude": "lower year-to-year variance",
+          "horizon": "medium",
+          "confidence": "medium"
+        }
+      ],
+      "horizon": "short",
+      "confidence": "high",
+      "trade_offs": "Mechanised sowing and harvest get harder; row configuration has to match available equipment.",
+      "citations": [
+        {
+          "organisation": "FAO",
+          "title": "Save and Grow: A policymaker's guide to sustainable intensification",
+          "year": 2011,
+          "locator": "ch. 2",
+          "url": "https://www.fao.org/3/i2215e/i2215e.pdf",
+          "verified": false
+        },
+        {
+          "organisation": "IPBES",
+          "title": "Assessment Report on Pollinators, Pollination and Food Production",
+          "year": 2016,
+          "locator": "ch. 6",
+          "url": "https://www.ipbes.net/assessment-reports/pollinators",
+          "verified": false
+        }
+      ],
+      "search_query": "cereal legume intercropping land equivalent ratio arthropod diversity"
+    },
+    {
+      "id": "residue_retention_no_till",
+      "title": "Residue retention with reduced tillage",
+      "category": "soil_physics",
+      "what_to_do": "Stop residue burning and removal; retain 30-50% of crop residue as surface mulch and shift to zero or minimum tillage seeding.",
+      "preconditions": {
+        "land_use": [
+          "monoculture_crop",
+          "mixed_cropping"
+        ],
+        "soil_organic_carbon_pct": {
+          "max": 1.2
+        }
+      },
+      "contraindications": {
+        "soil_moisture_pct": {
+          "min": 45
+        }
+      },
+      "causal_chain": [
+        "surface mulch -> soil surface temperature falls 3-6 C at peak",
+        "lower temperature + cover -> evaporation losses fall",
+        "no inversion tillage -> fungal hyphal networks and earthworm burrows survive",
+        "intact macropores -> infiltration rises, runoff and erosion fall",
+        "stable habitat -> soil macrofauna abundance and diversity rise"
+      ],
+      "why_it_works": "Tillage is the single most destructive routine event in a cropped soil's year: it shatters aggregates, exposes protected carbon to oxidation, and severs the mycorrhizal networks that take months to rebuild. Residue burning compounds it by removing the carbon input entirely. Retaining residue and stopping inversion tillage is therefore two interventions in one, and it is the cheapest carbon gain available on degraded cropland.",
+      "effects": [
+        {
+          "metric": "soil_organic_carbon",
+          "direction": "increase",
+          "magnitude": "+0.1-0.4 t C/ha/yr in the 0-15 cm layer",
+          "horizon": "medium",
+          "confidence": "medium"
+        },
+        {
+          "metric": "earthworm_abundance",
+          "direction": "increase",
+          "magnitude": "2-3x",
+          "horizon": "medium",
+          "confidence": "medium"
+        },
+        {
+          "metric": "infiltration_rate",
+          "direction": "increase",
+          "magnitude": "+20-60%",
+          "horizon": "short",
+          "confidence": "medium"
+        },
+        {
+          "metric": "soil_erosion",
+          "direction": "decrease",
+          "magnitude": "-40-80%",
+          "horizon": "short",
+          "confidence": "high"
+        },
+        {
+          "metric": "particulate_air_pollution",
+          "direction": "decrease",
+          "magnitude": "burning emissions eliminated",
+          "horizon": "short",
+          "confidence": "high"
+        }
+      ],
+      "horizon": "medium",
+      "confidence": "medium",
+      "trade_offs": "Weed pressure rises in the first 2-3 seasons; needs a zero-till seed drill. On poorly drained clay soils surface residue can delay warming and sowing.",
+      "citations": [
+        {
+          "organisation": "FAO",
+          "title": "Conservation Agriculture principles and practice",
+          "year": 2022,
+          "locator": "principle 2",
+          "url": "https://www.fao.org/conservation-agriculture/en/",
+          "verified": false
+        },
+        {
+          "organisation": "IPCC",
+          "title": "AR6 WGIII, Ch. 7 Agriculture, Forestry and Other Land Uses",
+          "year": 2022,
+          "locator": "7.4.3",
+          "url": "https://www.ipcc.ch/report/ar6/wg3/",
+          "verified": false
+        }
+      ],
+      "search_query": "residue retention zero tillage soil organic carbon earthworm infiltration"
+    },
+    {
+      "id": "farm_pond_water_harvesting",
+      "title": "Farm pond plus contour bunding for in-situ water harvesting",
+      "category": "hydrology",
+      "what_to_do": "Excavate a farm pond sized to 2-4% of the catchment area, fed by contour bunds or a graded field drain; leave one gently sloping bank unlined and vegetated.",
+      "preconditions": {
+        "climate_zone": [
+          "arid",
+          "semi_arid",
+          "sub_humid"
+        ],
+        "rainfall_regime": [
+          "low",
+          "medium"
+        ],
+        "area_hectares": {
+          "min": 1.0
+        }
+      },
+      "contraindications": {
+        "land_use": [
+          "wetland",
+          "natural_forest"
+        ]
+      },
+      "causal_chain": [
+        "runoff intercepted -> groundwater recharge and dry-season water availability rise",
+        "supplemental irrigation possible -> crop survives mid-season dry spells",
+        "standing water + vegetated bank -> amphibian breeding habitat and bird watering point created",
+        "aquatic vegetation -> odonate and aquatic invertebrate colonisation",
+        "reduced runoff velocity -> topsoil and nutrients retained on the field"
+      ],
+      "why_it_works": "In semi-arid systems the limiting factor for both crops and fauna is not annual rainfall but its distribution: the water arrives in a few intense events and leaves as runoff within hours. Storing a fraction of that runoff converts a pulse into a buffer. The biodiversity gain is disproportionate because standing water is the scarcest habitat type in a dry agricultural landscape, so a single pond can function as a stepping stone for amphibians and waterbirds across a whole cluster of farms.",
+      "effects": [
+        {
+          "metric": "dry_season_water_availability",
+          "direction": "increase",
+          "magnitude": "1-2 supplemental irrigations",
+          "horizon": "short",
+          "confidence": "high"
+        },
+        {
+          "metric": "amphibian_species_richness",
+          "direction": "increase",
+          "magnitude": "new breeding habitat where none existed",
+          "horizon": "medium",
+          "confidence": "medium"
+        },
+        {
+          "metric": "groundwater_recharge",
+          "direction": "increase",
+          "magnitude": "site dependent",
+          "horizon": "medium",
+          "confidence": "low"
+        },
+        {
+          "metric": "soil_erosion",
+          "direction": "decrease",
+          "magnitude": "-30-60%",
+          "horizon": "short",
+          "confidence": "medium"
+        }
+      ],
+      "horizon": "medium",
+      "confidence": "medium",
+      "trade_offs": "Capital cost and 2-5% land take. A fully lined pond gains storage but loses recharge and most of the biodiversity value, so the design choice matters. Poorly sited ponds can intercept flows that downstream users depend on.",
+      "citations": [
+        {
+          "organisation": "ICRISAT",
+          "title": "Integrated watershed management in the semi-arid tropics",
+          "year": 2015,
+          "locator": "sec. 3",
+          "url": "https://www.icrisat.org/",
+          "verified": false
+        },
+        {
+          "organisation": "FAO",
+          "title": "The State of the World's Land and Water Resources",
+          "year": 2021,
+          "locator": "ch. 5",
+          "url": "https://www.fao.org/land-water/solaw2021/en/",
+          "verified": false
+        }
+      ],
+      "search_query": "farm pond water harvesting semi-arid recharge amphibian habitat"
+    },
+    {
+      "id": "native_hedgerow_field_margin",
+      "title": "Native flowering hedgerow and uncropped field margin",
+      "category": "habitat_structure",
+      "what_to_do": "Establish a 2-3 m strip of native flowering shrubs and grasses along field boundaries, staggering species so something is in flower in every month; cut on rotation, never all at once.",
+      "preconditions": {
+        "land_use": [
+          "monoculture_crop",
+          "mixed_cropping",
+          "orchard",
+          "peri_urban"
+        ]
+      },
+      "contraindications": {},
+      "causal_chain": [
+        "continuous floral resource -> pollinator populations persist through the year, not just at crop bloom",
+        "overwintering structure -> predatory beetles and spiders survive between seasons",
+        "resident natural enemies -> pest suppression at crop emergence when it matters most",
+        "linear connected strips -> movement corridor between remnant habitat patches",
+        "root mass at field edge -> nutrient interception before runoff leaves the field"
+      ],
+      "why_it_works": "Most pollinator loss on farmland is not caused by the absence of crop flowers but by the hungry gap either side of the crop bloom. A crop that flowers for three weeks cannot sustain a bee population for twelve months. The hedgerow's value is that it closes that gap, so the pollinators are already present and abundant when the crop needs them. The same strip doubles as the overwintering refuge for the predatory arthropods that control early-season pests.",
+      "effects": [
+        {
+          "metric": "pollinator_species_richness",
+          "direction": "increase",
+          "magnitude": "+30-70% at field edge",
+          "horizon": "medium",
+          "confidence": "medium"
+        },
+        {
+          "metric": "natural_enemy_abundance",
+          "direction": "increase",
+          "magnitude": "+20-50%",
+          "horizon": "short",
+          "confidence": "medium"
+        },
+        {
+          "metric": "habitat_connectivity",
+          "direction": "increase",
+          "magnitude": "corridor established",
+          "horizon": "medium",
+          "confidence": "medium"
+        },
+        {
+          "metric": "pesticide_applications",
+          "direction": "decrease",
+          "magnitude": "-1 to -2 sprays/season",
+          "horizon": "medium",
+          "confidence": "low"
+        }
+      ],
+      "horizon": "medium",
+      "confidence": "medium",
+      "trade_offs": "Small land take and an annual maintenance cost. Benefits fall off sharply beyond ~50 m into large fields, so very large blocks need internal strips too.",
+      "citations": [
+        {
+          "organisation": "IPBES",
+          "title": "Assessment Report on Pollinators, Pollination and Food Production",
+          "year": 2016,
+          "locator": "ch. 6",
+          "url": "https://www.ipbes.net/assessment-reports/pollinators",
+          "verified": false
+        },
+        {
+          "organisation": "FAO",
+          "title": "Why bees matter",
+          "year": 2018,
+          "locator": "sec. 3",
+          "url": "https://www.fao.org/3/i9527en/i9527en.pdf",
+          "verified": false
+        }
+      ],
+      "search_query": "field margin hedgerow pollinator richness natural enemies farmland"
+    },
+    {
+      "id": "rotational_grazing",
+      "title": "Rotational grazing with enforced rest periods",
+      "category": "rangeland",
+      "what_to_do": "Divide the grazing area into 4-8 paddocks, graze each for a short period, and rest each for long enough that palatable perennials complete regrowth before being grazed again.",
+      "preconditions": {
+        "land_use": [
+          "grazing_land",
+          "degraded_land"
+        ],
+        "grazing_pressure": [
+          "high",
+          "continuous",
+          "heavy",
+          "moderate"
+        ]
+      },
+      "contraindications": {},
+      "causal_chain": [
+        "rest period -> palatable perennial grasses rebuild root reserves",
+        "perennial root mass recovers -> soil carbon and infiltration rise",
+        "ground cover returns -> surface sealing and runoff fall",
+        "structural heterogeneity across paddocks -> grassland bird and insect niches restored",
+        "unpalatable invader species lose their competitive release"
+      ],
+      "why_it_works": "Continuous grazing is selective grazing: animals return to the same palatable plants every time they regrow, so those species exhaust their root reserves and die out while unpalatable species take over. The damage is caused by the frequency of defoliation, not the number of animals. Rotation fixes the frequency without necessarily reducing the herd, which is why it is adoptable where destocking is not.",
+      "effects": [
+        {
+          "metric": "perennial_grass_cover",
+          "direction": "increase",
+          "magnitude": "+20-50%",
+          "horizon": "medium",
+          "confidence": "medium"
+        },
+        {
+          "metric": "soil_organic_carbon",
+          "direction": "increase",
+          "magnitude": "+0.1-0.3 t C/ha/yr",
+          "horizon": "long",
+          "confidence": "low"
+        },
+        {
+          "metric": "grassland_bird_richness",
+          "direction": "increase",
+          "magnitude": "recovery of ground-nesting species",
+          "horizon": "long",
+          "confidence": "low"
+        },
+        {
+          "metric": "runoff_coefficient",
+          "direction": "decrease",
+          "magnitude": "-15-40%",
+          "horizon": "medium",
+          "confidence": "medium"
+        }
+      ],
+      "horizon": "medium",
+      "confidence": "medium",
+      "trade_offs": "Needs fencing or active herding and daily labour. Evidence on the carbon benefit is genuinely contested; the vegetation and hydrology benefits are better supported than the carbon claim.",
+      "citations": [
+        {
+          "organisation": "IPCC",
+          "title": "Special Report on Climate Change and Land, Ch. 4",
+          "year": 2019,
+          "locator": "4.9.2",
+          "url": "https://www.ipcc.ch/srccl/",
+          "verified": false
+        },
+        {
+          "organisation": "UNCCD",
+          "title": "Global Land Outlook 2",
+          "year": 2022,
+          "locator": "ch. 6",
+          "url": "https://www.unccd.int/resources/global-land-outlook/glo2",
+          "verified": false
+        }
+      ],
+      "search_query": "rotational grazing rest period perennial grass soil carbon rangeland",
+      "need_keys": [
+        "grazing_load"
+      ]
+    },
+    {
+      "id": "assisted_natural_regeneration",
+      "title": "Assisted natural regeneration on degraded land",
+      "category": "restoration",
+      "what_to_do": "Protect the site from fire and grazing, cut back competing grass around existing rootstock and saplings, and let the surviving root systems resprout instead of planting nursery seedlings.",
+      "preconditions": {
+        "land_use": [
+          "degraded_land",
+          "fallow",
+          "grazing_land"
+        ],
+        "tree_cover_pct": {
+          "max": 25
+        }
+      },
+      "contraindications": {},
+      "causal_chain": [
+        "existing rootstock released from competition -> rapid resprouting with an established root system",
+        "native species composition preserved -> local fauna find the plant species they co-evolved with",
+        "canopy closes -> microclimate cools, soil moisture is retained",
+        "litter layer builds -> soil carbon and decomposer diversity rise",
+        "structural complexity returns -> multi-layer habitat for birds, bats and arthropods"
+      ],
+      "why_it_works": "Degraded land is rarely biologically empty: it usually holds a large bank of suppressed rootstock and a viable seed bank. Those root systems are years ahead of any nursery seedling and cost nothing. Plantation with a few fast-growing exotics gives faster canopy but a much poorer species assemblage, which is why plantations can score well on tree cover and badly on biodiversity.",
+      "effects": [
+        {
+          "metric": "native_species_richness",
+          "direction": "increase",
+          "magnitude": "substantially higher than monoculture plantation",
+          "horizon": "long",
+          "confidence": "medium"
+        },
+        {
+          "metric": "tree_cover",
+          "direction": "increase",
+          "magnitude": "site dependent, typically visible by year 3-5",
+          "horizon": "long",
+          "confidence": "medium"
+        },
+        {
+          "metric": "soil_organic_carbon",
+          "direction": "increase",
+          "magnitude": "+0.2-0.6 percentage points",
+          "horizon": "long",
+          "confidence": "medium"
+        },
+        {
+          "metric": "restoration_cost",
+          "direction": "decrease",
+          "magnitude": "far below planting-based restoration",
+          "horizon": "short",
+          "confidence": "high"
+        }
+      ],
+      "horizon": "long",
+      "confidence": "medium",
+      "trade_offs": "Requires sustained exclusion of grazing and fire, which is a social problem more than a technical one. Slower visible canopy than plantation, which makes it harder to fund.",
+      "citations": [
+        {
+          "organisation": "FAO",
+          "title": "Assisted Natural Regeneration: an effective restoration approach",
+          "year": 2019,
+          "locator": "sec. 2",
+          "url": "https://www.fao.org/forestry/en/",
+          "verified": false
+        },
+        {
+          "organisation": "IPBES",
+          "title": "Assessment Report on Land Degradation and Restoration",
+          "year": 2018,
+          "locator": "ch. 6",
+          "url": "https://www.ipbes.net/assessment-reports/ldr",
+          "verified": false
+        }
+      ],
+      "search_query": "assisted natural regeneration degraded land native species restoration"
+    },
+    {
+      "id": "integrated_pest_management",
+      "title": "Integrated pest management with economic threshold spraying",
+      "category": "chemical_load",
+      "what_to_do": "Scout weekly, spray only above an established economic threshold, rotate modes of action, and switch broad-spectrum products for selective ones during crop bloom.",
+      "preconditions": {
+        "pesticide_use": [
+          "high",
+          "calendar",
+          "routine",
+          "heavy",
+          "moderate"
+        ]
+      },
+      "contraindications": {},
+      "causal_chain": [
+        "fewer broad-spectrum applications -> predatory arthropod populations survive",
+        "predators survive -> secondary pest outbreaks and resurgence fall",
+        "lower spray load during bloom -> pollinator mortality falls",
+        "reduced runoff of actives -> aquatic invertebrate diversity in field drains recovers",
+        "mode-of-action rotation -> resistance development slowed, longevity of the tool preserved"
+      ],
+      "why_it_works": "Calendar spraying suppresses the pest and its natural enemies at the same time, but the enemies recover more slowly because their populations are smaller and their generation times longer. The result is a pesticide treadmill where each spray makes the next one more necessary. Threshold-based spraying breaks the loop, and the biodiversity gain shows up fastest of any intervention here because it is a removal of pressure rather than a slow build of structure.",
+      "effects": [
+        {
+          "metric": "pesticide_applications",
+          "direction": "decrease",
+          "magnitude": "-30-60%",
+          "horizon": "short",
+          "confidence": "medium"
+        },
+        {
+          "metric": "natural_enemy_abundance",
+          "direction": "increase",
+          "magnitude": "+40-100%",
+          "horizon": "short",
+          "confidence": "medium"
+        },
+        {
+          "metric": "pollinator_mortality",
+          "direction": "decrease",
+          "magnitude": "marked reduction during bloom",
+          "horizon": "short",
+          "confidence": "medium"
+        },
+        {
+          "metric": "input_cost",
+          "direction": "decrease",
+          "magnitude": "-20-40% of crop protection spend",
+          "horizon": "short",
+          "confidence": "medium"
+        }
+      ],
+      "horizon": "short",
+      "confidence": "high",
+      "trade_offs": "Requires weekly scouting labour and the discipline to not spray when the field looks bad but is below threshold.",
+      "citations": [
+        {
+          "organisation": "FAO",
+          "title": "International Code of Conduct on Pesticide Management / IPM guidance",
+          "year": 2014,
+          "locator": "art. 3",
+          "url": "https://www.fao.org/pest-and-pesticide-management/en/",
+          "verified": false
+        },
+        {
+          "organisation": "IPBES",
+          "title": "Assessment Report on Pollinators, Pollination and Food Production",
+          "year": 2016,
+          "locator": "ch. 2",
+          "url": "https://www.ipbes.net/assessment-reports/pollinators",
+          "verified": false
+        }
+      ],
+      "search_query": "integrated pest management economic threshold natural enemies pollinator",
+      "need_keys": [
+        "chemical_load"
+      ]
+    },
+    {
+      "id": "gypsum_organic_amendment_sodic",
+      "title": "Gypsum plus organic amendment on sodic soil",
+      "category": "soil_chemistry",
+      "what_to_do": "Apply gypsum at the gypsum requirement dose with farmyard manure or pressmud, leach with good-quality water, and establish a salt-tolerant pioneer crop before the intended cash crop.",
+      "preconditions": {
+        "soil_ph": {
+          "min": 8.4
+        }
+      },
+      "contraindications": {},
+      "causal_chain": [
+        "calcium displaces exchangeable sodium -> clay flocculates instead of dispersing",
+        "flocculation -> macropores reopen, infiltration and drainage recover",
+        "leaching removes sodium -> root zone becomes habitable",
+        "organic matter added -> microbial activity resumes, nutrient cycling restarts",
+        "vegetation cover returns -> further carbon input, positive feedback"
+      ],
+      "why_it_works": "Sodic soil fails physically, not just chemically: excess sodium disperses clay, the surface seals, and water cannot enter, so the soil is simultaneously waterlogged at the surface and droughted at depth. Gypsum alone reopens the structure but leaves the soil biologically dead; the organic amendment supplies the carbon that lets the microbial community recolonise. Applying only one of the two is the most common reason reclamation stalls.",
+      "effects": [
+        {
+          "metric": "exchangeable_sodium_percentage",
+          "direction": "decrease",
+          "magnitude": "substantial reduction over 1-2 leaching cycles",
+          "horizon": "medium",
+          "confidence": "high"
+        },
+        {
+          "metric": "infiltration_rate",
+          "direction": "increase",
+          "magnitude": "several-fold on severely sodic soil",
+          "horizon": "medium",
+          "confidence": "medium"
+        },
+        {
+          "metric": "microbial_biomass_carbon",
+          "direction": "increase",
+          "magnitude": "+50-150% from a very low base",
+          "horizon": "medium",
+          "confidence": "medium"
+        },
+        {
+          "metric": "vegetative_cover",
+          "direction": "increase",
+          "magnitude": "bare patches revegetated",
+          "horizon": "medium",
+          "confidence": "medium"
+        }
+      ],
+      "horizon": "medium",
+      "confidence": "medium",
+      "trade_offs": "Needs a drainage outlet and good-quality leaching water; without drainage the sodium simply redistributes. Gypsum cost is significant at the full requirement dose.",
+      "citations": [
+        {
+          "organisation": "FAO",
+          "title": "Global Map of Salt-Affected Soils / salinity management guidance",
+          "year": 2021,
+          "locator": "sec. 4",
+          "url": "https://www.fao.org/soils-portal/",
+          "verified": false
+        },
+        {
+          "organisation": "ICAR-CSSRI",
+          "title": "Reclamation of sodic soils: technology and practice",
+          "year": 2018,
+          "locator": "ch. 3",
+          "url": "https://cssri.res.in/",
+          "verified": false
+        }
+      ],
+      "search_query": "sodic soil gypsum organic amendment exchangeable sodium reclamation",
+      "need_keys": [
+        "sodicity_alkalinity",
+        "acidity"
+      ]
+    },
+    {
+      "id": "riparian_buffer_strip",
+      "title": "Vegetated riparian buffer along drains and streams",
+      "category": "water_quality",
+      "what_to_do": "Leave or plant a 5-15 m multi-layer strip of native grasses, shrubs and trees along every watercourse and field drain; exclude cultivation, grazing and spraying from it.",
+      "preconditions": {
+        "land_use": [
+          "monoculture_crop",
+          "mixed_cropping",
+          "orchard",
+          "grazing_land",
+          "peri_urban"
+        ]
+      },
+      "contraindications": {},
+      "causal_chain": [
+        "dense root mat -> surface runoff slowed, sediment deposited before reaching water",
+        "root uptake plus denitrification in the saturated zone -> nitrate load falls",
+        "canopy shade -> stream temperature falls, dissolved oxygen rises",
+        "cooler oxygenated water -> aquatic invertebrate and fish diversity rise",
+        "continuous woody strip along a watercourse -> the most effective wildlife corridor in a farmed landscape"
+      ],
+      "why_it_works": "Riparian strips do double duty in a way few interventions manage: they are a water-quality filter and a movement corridor at the same time, because watercourses are already the natural connectivity skeleton of a landscape. The nitrate removal is largely microbial denitrification in the saturated root zone, which is why the strip has to reach the water table to work and why a mown grass verge underperforms a multi-layer strip.",
+      "effects": [
+        {
+          "metric": "nitrate_load_to_water",
+          "direction": "decrease",
+          "magnitude": "-30-90% depending on width",
+          "horizon": "short",
+          "confidence": "medium"
+        },
+        {
+          "metric": "sediment_load",
+          "direction": "decrease",
+          "magnitude": "-50-90%",
+          "horizon": "short",
+          "confidence": "high"
+        },
+        {
+          "metric": "aquatic_invertebrate_richness",
+          "direction": "increase",
+          "magnitude": "recovery of sensitive taxa",
+          "horizon": "medium",
+          "confidence": "medium"
+        },
+        {
+          "metric": "habitat_connectivity",
+          "direction": "increase",
+          "magnitude": "linear corridor established",
+          "horizon": "medium",
+          "confidence": "high"
+        }
+      ],
+      "horizon": "medium",
+      "confidence": "high",
+      "trade_offs": "Takes productive land nearest the water, which is often the most fertile. Effectiveness collapses where runoff is concentrated into a channel that cuts through the strip.",
+      "citations": [
+        {
+          "organisation": "FAO",
+          "title": "The State of the World's Land and Water Resources",
+          "year": 2021,
+          "locator": "ch. 4",
+          "url": "https://www.fao.org/land-water/solaw2021/en/",
+          "verified": false
+        },
+        {
+          "organisation": "UNEP",
+          "title": "Global Environment Outlook 6, freshwater chapter",
+          "year": 2019,
+          "locator": "ch. 9",
+          "url": "https://www.unep.org/geo/",
+          "verified": false
+        }
+      ],
+      "search_query": "riparian buffer strip nitrate sediment aquatic invertebrate corridor"
+    },
+    {
+      "id": "biochar_amendment",
+      "title": "Biochar amendment co-applied with compost",
+      "category": "soil_chemistry",
+      "what_to_do": "Apply 2-10 t/ha of biochar produced from local crop residue, pre-charged by co-composting rather than applied fresh, banded into the root zone.",
+      "preconditions": {
+        "soil_organic_carbon_pct": {
+          "max": 0.8
+        },
+        "soil_texture": [
+          "sandy",
+          "sandy loam",
+          "loamy sand"
+        ]
+      },
+      "contraindications": {
+        "soil_ph": {
+          "min": 8.2
+        }
+      },
+      "causal_chain": [
+        "high-porosity carbon skeleton -> cation exchange capacity and water retention rise in sandy soil",
+        "pore network -> physical refuge for bacteria from protist predation",
+        "co-composting -> pores pre-loaded with nutrients and inoculum instead of stripping them from the soil",
+        "improved retention -> less nutrient leaching to groundwater",
+        "recalcitrant carbon -> long-residence-time carbon stock, distinct from labile organic matter"
+      ],
+      "why_it_works": "Biochar works on a different mechanism from ordinary organic matter: it is not food for microbes, it is housing. Its value is physical structure and exchange capacity, which is why the response is large on sandy low-CEC soils and often negligible on clays that already have both. Applying it fresh is the classic failure mode, because the empty pores adsorb nutrients out of the soil in the first season and yields dip.",
+      "effects": [
+        {
+          "metric": "cation_exchange_capacity",
+          "direction": "increase",
+          "magnitude": "+10-40% on sandy soil",
+          "horizon": "medium",
+          "confidence": "medium"
+        },
+        {
+          "metric": "water_holding_capacity",
+          "direction": "increase",
+          "magnitude": "+5-20% on sandy soil",
+          "horizon": "short",
+          "confidence": "medium"
+        },
+        {
+          "metric": "stable_soil_carbon",
+          "direction": "increase",
+          "magnitude": "centuries-scale residence time",
+          "horizon": "long",
+          "confidence": "high"
+        },
+        {
+          "metric": "nutrient_leaching",
+          "direction": "decrease",
+          "magnitude": "-15-50%",
+          "horizon": "short",
+          "confidence": "low"
+        }
+      ],
+      "horizon": "medium",
+      "confidence": "medium",
+      "trade_offs": "Response on clay and already-alkaline soils is often nil or negative. Feedstock and pyrolysis quality vary enormously, and uncontrolled pyrolysis creates its own air pollution problem.",
+      "citations": [
+        {
+          "organisation": "IPCC",
+          "title": "AR6 WGIII, Ch. 7",
+          "year": 2022,
+          "locator": "7.4.3.2",
+          "url": "https://www.ipcc.ch/report/ar6/wg3/",
+          "verified": false
+        },
+        {
+          "organisation": "FAO",
+          "title": "Soil Organic Carbon: the hidden potential",
+          "year": 2017,
+          "locator": "ch. 5",
+          "url": "https://www.fao.org/documents/card/en/c/25eaf720-94e4-4f53-8f50-cdfc2487e1f8/",
+          "verified": false
+        }
+      ],
+      "search_query": "biochar compost sandy soil cation exchange water holding stable carbon"
+    },
+    {
+      "id": "alternate_wetting_drying_rice",
+      "title": "Alternate wetting and drying in irrigated rice",
+      "category": "hydrology",
+      "what_to_do": "Install a perforated field water tube and re-irrigate only when the water table drops to about 15 cm below the surface, instead of maintaining continuous flooding.",
+      "preconditions": {
+        "current_crop": [
+          "rice",
+          "paddy",
+          "rice-wheat"
+        ],
+        "irrigation_source": [
+          "canal",
+          "tubewell",
+          "borewell",
+          "groundwater"
+        ]
+      },
+      "contraindications": {},
+      "causal_chain": [
+        "soil periodically aerated -> methanogenic archaea suppressed -> methane emission falls",
+        "less pumping -> groundwater draw and energy use fall",
+        "aerobic phases -> root system deeper, lodging risk lower",
+        "reduced continuous flooding -> mosquito breeding and some pest cycles interrupted",
+        "caution: aeration can raise nitrous oxide, so the net climate effect depends on N management"
+      ],
+      "why_it_works": "Continuous flooding is an anaerobic engineering choice made for weed control, not because rice needs standing water. Removing the permanent anaerobic layer removes the habitat of the methane-producing archaea. The trade-off is real and worth stating: alternate aerobic and anaerobic phases can increase nitrous oxide, so the intervention only delivers a net greenhouse benefit when nitrogen is applied in split doses rather than broadcast.",
+      "effects": [
+        {
+          "metric": "methane_emission",
+          "direction": "decrease",
+          "magnitude": "-30-70%",
+          "horizon": "short",
+          "confidence": "high"
+        },
+        {
+          "metric": "irrigation_water_use",
+          "direction": "decrease",
+          "magnitude": "-15-30%",
+          "horizon": "short",
+          "confidence": "high"
+        },
+        {
+          "metric": "nitrous_oxide_emission",
+          "direction": "increase",
+          "magnitude": "can rise; depends on N management",
+          "horizon": "short",
+          "confidence": "medium"
+        },
+        {
+          "metric": "groundwater_extraction",
+          "direction": "decrease",
+          "magnitude": "-15-30%",
+          "horizon": "short",
+          "confidence": "medium"
+        }
+      ],
+      "horizon": "short",
+      "confidence": "high",
+      "trade_offs": "Weed pressure rises without the flood. Needs reliable irrigation control, so it fails on rotational canal supply where the farmer cannot choose the timing.",
+      "citations": [
+        {
+          "organisation": "IRRI",
+          "title": "Alternate Wetting and Drying: water-saving technology for rice",
+          "year": 2016,
+          "locator": "sec. 2",
+          "url": "https://www.irri.org/",
+          "verified": false
+        },
+        {
+          "organisation": "IPCC",
+          "title": "AR6 WGIII, Ch. 7",
+          "year": 2022,
+          "locator": "7.4.3",
+          "url": "https://www.ipcc.ch/report/ar6/wg3/",
+          "verified": false
+        }
+      ],
+      "search_query": "alternate wetting drying rice methane water saving nitrous oxide",
+      "need_keys": [
+        "irrigated_paddy"
+      ]
+    },
+    {
+      "id": "pollinator_nesting_habitat",
+      "title": "Ground-nesting and cavity-nesting bee habitat provision",
+      "category": "habitat_structure",
+      "what_to_do": "Keep small patches of bare, undisturbed, sun-exposed soil on well-drained ground away from tillage, and add stem bundles or drilled hardwood blocks on field edges.",
+      "preconditions": {
+        "land_use": [
+          "monoculture_crop",
+          "mixed_cropping",
+          "orchard",
+          "peri_urban"
+        ]
+      },
+      "contraindications": {},
+      "causal_chain": [
+        "undisturbed bare soil -> ground-nesting solitary bees can actually nest",
+        "nesting sites near forage -> local populations become resident, not transient",
+        "resident wild bees -> pollination service independent of rented hives",
+        "wild bee diversity -> pollination is more robust to weather because species differ in activity windows",
+        "diverse pollinator assemblage -> fruit set more reliable than with a single managed species"
+      ],
+      "why_it_works": "A majority of wild bee species nest in bare ground, and every biodiversity plan that adds flowers while leaving the whole farm tilled or mulched is offering food with no housing. Wild bee diversity also buys weather insurance: managed honeybees forage in a narrow temperature and wind window, while a diverse wild assemblage covers a much wider range of conditions, so fruit set holds up in a bad bloom week.",
+      "effects": [
+        {
+          "metric": "wild_bee_nesting_density",
+          "direction": "increase",
+          "magnitude": "nesting habitat created where limiting",
+          "horizon": "short",
+          "confidence": "medium"
+        },
+        {
+          "metric": "crop_fruit_set",
+          "direction": "increase",
+          "magnitude": "+5-25% in pollinator-dependent crops",
+          "horizon": "medium",
+          "confidence": "low"
+        },
+        {
+          "metric": "pollinator_species_richness",
+          "direction": "increase",
+          "magnitude": "+20-40%",
+          "horizon": "medium",
+          "confidence": "medium"
+        },
+        {
+          "metric": "managed_hive_rental_cost",
+          "direction": "decrease",
+          "magnitude": "partial substitution",
+          "horizon": "long",
+          "confidence": "low"
+        }
+      ],
+      "horizon": "medium",
+      "confidence": "medium",
+      "trade_offs": "Counter-intuitive to farmers who treat bare soil as a failure. Artificial bee hotels need annual cleaning or they become disease and parasite traps.",
+      "citations": [
+        {
+          "organisation": "IPBES",
+          "title": "Assessment Report on Pollinators, Pollination and Food Production",
+          "year": 2016,
+          "locator": "ch. 3 and 6",
+          "url": "https://www.ipbes.net/assessment-reports/pollinators",
+          "verified": false
+        },
+        {
+          "organisation": "FAO",
+          "title": "Why bees matter",
+          "year": 2018,
+          "locator": "sec. 2",
+          "url": "https://www.fao.org/3/i9527en/i9527en.pdf",
+          "verified": false
+        }
+      ],
+      "search_query": "ground nesting solitary bee habitat bare soil crop pollination stability"
+    },
+    {
+      "id": "split_nitrogen_application",
+      "title": "Split and soil-test-based nitrogen application",
+      "category": "chemical_load",
+      "what_to_do": "Replace a single basal broadcast with 3-4 split doses timed to crop demand, dosed from a soil test or leaf colour chart rather than a fixed recommendation.",
+      "preconditions": {
+        "fertiliser_use": [
+          "high",
+          "heavy",
+          "broadcast",
+          "single dose",
+          "moderate"
+        ]
+      },
+      "contraindications": {},
+      "causal_chain": [
+        "nitrogen supply matched to uptake curve -> less nitrate sitting in soil between rain events",
+        "less residual nitrate -> leaching to groundwater and runoff to surface water fall",
+        "lower nitrate load -> algal blooms and eutrophication downstream reduced",
+        "less ammonia volatilisation and nitrous oxide -> lower emissions per tonne of grain",
+        "reduced soil nitrogen surplus -> mycorrhizal association restored, which excess N suppresses"
+      ],
+      "why_it_works": "Nitrogen loss is a timing mismatch, not a dose problem. A single basal dose puts the whole season's nitrogen into the soil weeks before the crop can take it up, so the first heavy rain exports it. The biodiversity effect is mostly off-site and therefore easy to miss: the species that suffer from over-fertilisation are downstream aquatic ones, plus the mycorrhizal fungi that a high-nitrogen root zone makes redundant.",
+      "effects": [
+        {
+          "metric": "nitrogen_use_efficiency",
+          "direction": "increase",
+          "magnitude": "+20-40%",
+          "horizon": "short",
+          "confidence": "high"
+        },
+        {
+          "metric": "nitrate_leaching",
+          "direction": "decrease",
+          "magnitude": "-20-50%",
+          "horizon": "short",
+          "confidence": "medium"
+        },
+        {
+          "metric": "nitrous_oxide_emission",
+          "direction": "decrease",
+          "magnitude": "-10-30%",
+          "horizon": "short",
+          "confidence": "medium"
+        },
+        {
+          "metric": "mycorrhizal_colonisation",
+          "direction": "increase",
+          "magnitude": "recovery from suppression",
+          "horizon": "medium",
+          "confidence": "low"
+        },
+        {
+          "metric": "fertiliser_cost",
+          "direction": "decrease",
+          "magnitude": "-10-25%",
+          "horizon": "short",
+          "confidence": "medium"
+        }
+      ],
+      "horizon": "short",
+      "confidence": "high",
+      "trade_offs": "More field operations and more labour. Top-dressing needs a workable field, which heavy rain can prevent at exactly the moment the dose is due.",
+      "citations": [
+        {
+          "organisation": "FAO",
+          "title": "The State of the World's Land and Water Resources",
+          "year": 2021,
+          "locator": "ch. 3",
+          "url": "https://www.fao.org/land-water/solaw2021/en/",
+          "verified": false
+        },
+        {
+          "organisation": "UNEP",
+          "title": "Frontiers report: nitrogen",
+          "year": 2019,
+          "locator": "ch. 4",
+          "url": "https://www.unep.org/",
+          "verified": false
+        }
+      ],
+      "search_query": "split nitrogen application nitrate leaching nitrogen use efficiency eutrophication",
+      "need_keys": [
+        "nutrient_load"
+      ]
+    },
+    {
+      "id": "mixed_species_shelterbelt",
+      "title": "Multi-species shelterbelt on the windward boundary",
+      "category": "agroforestry",
+      "what_to_do": "Plant a 3-5 row shelterbelt of mixed native species with graded heights, aiming for roughly 50% porosity rather than a solid wall, perpendicular to the prevailing dry-season wind.",
+      "preconditions": {
+        "climate_zone": [
+          "arid",
+          "semi_arid"
+        ],
+        "land_use": [
+          "monoculture_crop",
+          "mixed_cropping",
+          "orchard",
+          "degraded_land"
+        ]
+      },
+      "contraindications": {},
+      "causal_chain": [
+        "windspeed reduced for 10-20x the belt height downwind -> evapotranspiration demand falls",
+        "lower evaporative demand -> crop water stress and irrigation requirement fall",
+        "wind erosion of topsoil reduced -> nutrient-rich fine fraction retained",
+        "multi-species multi-height structure -> niches for birds, bats and insects a single-species row cannot offer",
+        "fruit and flower-bearing natives -> food resource across seasons, not just cover"
+      ],
+      "why_it_works": "A porous belt outperforms a solid one, which is the counter-intuitive part: a solid barrier creates turbulence and a short sheltered zone, while a 50% porous belt bleeds air through and extends the low-wind zone far downwind. Species mixture matters for the same reason it matters in a hedgerow, and a single-species exotic row delivers the wind benefit with almost none of the biodiversity benefit.",
+      "effects": [
+        {
+          "metric": "crop_evapotranspiration",
+          "direction": "decrease",
+          "magnitude": "-5-15% in the sheltered zone",
+          "horizon": "long",
+          "confidence": "medium"
+        },
+        {
+          "metric": "wind_erosion",
+          "direction": "decrease",
+          "magnitude": "-40-80%",
+          "horizon": "long",
+          "confidence": "high"
+        },
+        {
+          "metric": "bird_species_richness",
+          "direction": "increase",
+          "magnitude": "+30-60% versus open field",
+          "horizon": "long",
+          "confidence": "medium"
+        },
+        {
+          "metric": "crop_yield_in_sheltered_zone",
+          "direction": "increase",
+          "magnitude": "+5-15%",
+          "horizon": "long",
+          "confidence": "low"
+        }
+      ],
+      "horizon": "long",
+      "confidence": "medium",
+      "trade_offs": "A shaded and root-competition strip immediately adjacent to the belt yields less; the net gain only appears when the sheltered zone is counted. 3-5 years to effect.",
+      "citations": [
+        {
+          "organisation": "FAO",
+          "title": "Shelterbelts and windbreaks in dryland agriculture",
+          "year": 2016,
+          "locator": "sec. 3",
+          "url": "https://www.fao.org/forestry/en/",
+          "verified": false
+        },
+        {
+          "organisation": "UNCCD",
+          "title": "Global Land Outlook 2",
+          "year": 2022,
+          "locator": "ch. 5",
+          "url": "https://www.unccd.int/resources/global-land-outlook/glo2",
+          "verified": false
+        }
+      ],
+      "search_query": "shelterbelt windbreak porosity evapotranspiration wind erosion bird richness dryland"
+    },
+    {
+      "id": "wetland_restoration_buffer",
+      "title": "Restore hydrology and buffer zone of a degraded wetland",
+      "category": "restoration",
+      "what_to_do": "Remove or breach drainage structures to restore the natural hydroperiod, clear invasive water hyacinth mechanically, and establish an uncultivated buffer around the full seasonal high-water mark.",
+      "preconditions": {
+        "land_use": [
+          "wetland",
+          "degraded_land",
+          "peri_urban"
+        ]
+      },
+      "contraindications": {},
+      "causal_chain": [
+        "natural wetting and drying cycle restored -> native emergent plants outcompete invasives adapted to permanent water",
+        "emergent vegetation returns -> fish nursery and amphibian breeding habitat restored",
+        "buffer zone -> nutrient inflow that drives the invasion cut off at source",
+        "lower nutrient load -> algal dominance reduced, submerged plants and dissolved oxygen recover",
+        "functioning wetland -> flood attenuation and dry-season baseflow for the surrounding land"
+      ],
+      "why_it_works": "Most wetland degradation is a hydrology problem wearing a vegetation problem's clothes. Clearing water hyacinth without restoring the hydroperiod and cutting nutrient inflow buys a few months, because the altered, permanently flooded, nutrient-rich condition is exactly what the invasive is adapted to. Fixing the water regime changes which species wins by default, so the clearing only has to be done once.",
+      "effects": [
+        {
+          "metric": "native_wetland_plant_cover",
+          "direction": "increase",
+          "magnitude": "recovery over 2-4 seasons",
+          "horizon": "medium",
+          "confidence": "medium"
+        },
+        {
+          "metric": "waterbird_species_richness",
+          "direction": "increase",
+          "magnitude": "+50-200% from a degraded baseline",
+          "horizon": "medium",
+          "confidence": "medium"
+        },
+        {
+          "metric": "invasive_macrophyte_cover",
+          "direction": "decrease",
+          "magnitude": "-60-90% when hydrology is also fixed",
+          "horizon": "medium",
+          "confidence": "medium"
+        },
+        {
+          "metric": "flood_peak_attenuation",
+          "direction": "increase",
+          "magnitude": "site dependent",
+          "horizon": "medium",
+          "confidence": "low"
+        }
+      ],
+      "horizon": "medium",
+      "confidence": "medium",
+      "trade_offs": "Restoring the hydroperiod usually means someone loses drained land, so this is the most institutionally difficult intervention in the set. Mechanical invasive removal has to be repeated in year 1-2 before the native community closes.",
+      "citations": [
+        {
+          "organisation": "Ramsar Convention Secretariat",
+          "title": "Global Wetland Outlook",
+          "year": 2021,
+          "locator": "ch. 3",
+          "url": "https://www.global-wetland-outlook.ramsar.org/",
+          "verified": false
+        },
+        {
+          "organisation": "IPBES",
+          "title": "Global Assessment Report on Biodiversity and Ecosystem Services",
+          "year": 2019,
+          "locator": "ch. 3",
+          "url": "https://www.ipbes.net/global-assessment",
+          "verified": false
+        }
+      ],
+      "search_query": "wetland restoration hydroperiod invasive macrophyte waterbird nutrient buffer",
+      "need_keys": [
+        "nutrient_load",
+        "structural_simplicity"
+      ]
+    },
+    {
+      "id": "native_grass_bund_stabilisation",
+      "title": "Stabilise field bunds with deep-rooted native grasses",
+      "category": "soil_physics",
+      "what_to_do": "Plant vetiver or a local deep-rooted perennial grass along contour bunds and field boundaries; harvest the tops for fodder or thatch and never uproot the clumps.",
+      "preconditions": {
+        "land_use": [
+          "monoculture_crop",
+          "mixed_cropping",
+          "degraded_land",
+          "grazing_land"
+        ]
+      },
+      "contraindications": {},
+      "causal_chain": [
+        "dense vertical root curtain -> a living barrier that slows runoff without impounding it",
+        "sediment deposits upslope of the clump line -> terraces form naturally over several seasons",
+        "reduced runoff velocity -> infiltration and recharge rise",
+        "perennial tussocks -> overwintering and nesting habitat for grassland invertebrates and small birds",
+        "fodder offtake from the tops -> the practice pays for its own maintenance"
+      ],
+      "why_it_works": "The engineering value is the root curtain, not the shoot: vetiver roots go down several metres and form a near-continuous vertical screen that sediment cannot pass. Because it is a living structure it repairs itself after every storm, unlike an earthen bund that has to be rebuilt. It also provides the only perennial tussock habitat in an annually cultivated field, which matters for ground-nesting invertebrates.",
+      "effects": [
+        {
+          "metric": "soil_erosion",
+          "direction": "decrease",
+          "magnitude": "-50-90% on treated slopes",
+          "horizon": "medium",
+          "confidence": "high"
+        },
+        {
+          "metric": "runoff_volume",
+          "direction": "decrease",
+          "magnitude": "-20-50%",
+          "horizon": "medium",
+          "confidence": "medium"
+        },
+        {
+          "metric": "invertebrate_overwintering_habitat",
+          "direction": "increase",
+          "magnitude": "perennial refuge created",
+          "horizon": "short",
+          "confidence": "low"
+        },
+        {
+          "metric": "fodder_availability",
+          "direction": "increase",
+          "magnitude": "supplementary cut-and-carry biomass",
+          "horizon": "short",
+          "confidence": "medium"
+        }
+      ],
+      "horizon": "medium",
+      "confidence": "high",
+      "trade_offs": "Narrow strip of land taken along bunds. Choose a non-invasive local ecotype; some vigorous grasses become weeds in irrigated systems.",
+      "citations": [
+        {
+          "organisation": "FAO",
+          "title": "Vetiver grass for soil and water conservation",
+          "year": 2012,
+          "locator": "sec. 2",
+          "url": "https://www.fao.org/",
+          "verified": false
+        },
+        {
+          "organisation": "UNCCD",
+          "title": "Global Land Outlook 2",
+          "year": 2022,
+          "locator": "ch. 6",
+          "url": "https://www.unccd.int/resources/global-land-outlook/glo2",
+          "verified": false
+        }
+      ],
+      "search_query": "vetiver contour bund root curtain erosion runoff infiltration"
+    },
+    {
+      "id": "urban_native_planting_depaving",
+      "title": "De-paving and native-species planting in peri-urban land",
+      "category": "urban_ecology",
+      "what_to_do": "Break up unused impervious surface, replace ornamental exotics with locally native flowering and fruiting species, and connect the patches along existing drains and road verges.",
+      "preconditions": {
+        "land_use": [
+          "peri_urban",
+          "degraded_land"
+        ]
+      },
+      "contraindications": {},
+      "causal_chain": [
+        "impervious cover removed -> infiltration rises, storm runoff peak falls",
+        "native flowering species -> insect herbivores that exotic ornamentals cannot support return",
+        "native insects -> insectivorous birds and bats regain a food base",
+        "vegetated patches linked along verges -> isolated urban fragments become a connected network",
+        "canopy and soil moisture -> local surface temperature falls, urban heat island moderated"
+      ],
+      "why_it_works": "Ornamental urban planting fails ecologically because native insect herbivores are usually specialists that cannot eat exotic foliage, so an exotic-planted park is structurally green and trophically empty. Swapping species composition, not just adding more greenery, is what restores the food base. Connectivity does the rest, because urban habitat patches are small enough that isolated ones lose species steadily.",
+      "effects": [
+        {
+          "metric": "insect_species_richness",
+          "direction": "increase",
+          "magnitude": "large gain versus exotic ornamental planting",
+          "horizon": "medium",
+          "confidence": "medium"
+        },
+        {
+          "metric": "stormwater_runoff_peak",
+          "direction": "decrease",
+          "magnitude": "-20-50% locally",
+          "horizon": "short",
+          "confidence": "medium"
+        },
+        {
+          "metric": "local_surface_temperature",
+          "direction": "decrease",
+          "magnitude": "-1-4 C in the planted patch",
+          "horizon": "medium",
+          "confidence": "medium"
+        },
+        {
+          "metric": "bird_species_richness",
+          "direction": "increase",
+          "magnitude": "+20-60%",
+          "horizon": "long",
+          "confidence": "low"
+        }
+      ],
+      "horizon": "medium",
+      "confidence": "medium",
+      "trade_offs": "Native species can look untidy against municipal expectations, so this usually needs a maintenance agreement before it needs a planting plan.",
+      "citations": [
+        {
+          "organisation": "IPBES",
+          "title": "Global Assessment Report on Biodiversity and Ecosystem Services",
+          "year": 2019,
+          "locator": "ch. 2",
+          "url": "https://www.ipbes.net/global-assessment",
+          "verified": false
+        },
+        {
+          "organisation": "UNEP",
+          "title": "Global Environment Outlook 6",
+          "year": 2019,
+          "locator": "ch. 6",
+          "url": "https://www.unep.org/geo/",
+          "verified": false
+        }
+      ],
+      "search_query": "urban native planting depaving insect richness heat island connectivity"
+    },
+    {
+      "id": "mycorrhizal_inoculation",
+      "title": "Arbuscular mycorrhizal inoculation with phosphorus restraint",
+      "category": "soil_biology",
+      "what_to_do": "Inoculate at sowing with a locally sourced AM fungal consortium and simultaneously cut phosphorus application to soil-test rates; avoid fungicide seed treatment in the same season.",
+      "preconditions": {
+        "soil_organic_carbon_pct": {
+          "max": 0.8
+        },
+        "land_use": [
+          "monoculture_crop",
+          "degraded_land",
+          "orchard"
+        ]
+      },
+      "contraindications": {
+        "fertiliser_use": [
+          "very high phosphorus"
+        ]
+      },
+      "causal_chain": [
+        "hyphal network extends beyond the root depletion zone -> phosphorus and micronutrient uptake rise",
+        "glomalin and hyphal binding -> soil aggregate stability rises",
+        "stable aggregates -> physical protection of organic carbon from oxidation",
+        "networked root systems -> drought tolerance and seedling establishment improve",
+        "caveat: high available phosphorus switches the symbiosis off, so inoculating without cutting P wastes the input"
+      ],
+      "why_it_works": "The mycorrhizal symbiosis is a trade the plant only makes when phosphorus is scarce. Inoculating a soil that is already loaded with soluble phosphorus achieves nothing, which is why so many inoculation trials report no effect: the treatment was applied without removing the condition that suppresses it. The soil-structure benefit via glomalin is arguably larger than the nutrient benefit and is almost never measured.",
+      "effects": [
+        {
+          "metric": "phosphorus_uptake_efficiency",
+          "direction": "increase",
+          "magnitude": "+10-30% under low-P conditions",
+          "horizon": "short",
+          "confidence": "medium"
+        },
+        {
+          "metric": "aggregate_stability",
+          "direction": "increase",
+          "magnitude": "+10-25%",
+          "horizon": "medium",
+          "confidence": "medium"
+        },
+        {
+          "metric": "phosphorus_fertiliser_demand",
+          "direction": "decrease",
+          "magnitude": "-10-25%",
+          "horizon": "medium",
+          "confidence": "low"
+        },
+        {
+          "metric": "drought_tolerance",
+          "direction": "increase",
+          "magnitude": "improved seedling survival",
+          "horizon": "short",
+          "confidence": "low"
+        }
+      ],
+      "horizon": "medium",
+      "confidence": "low",
+      "trade_offs": "Commercial inoculant quality is highly variable and often unverifiable. The effect is null in high-phosphorus soils, so this must be paired with the fertiliser change or not done at all.",
+      "citations": [
+        {
+          "organisation": "FAO",
+          "title": "Soil biodiversity and its role in ecosystem services",
+          "year": 2020,
+          "locator": "ch. 3",
+          "url": "https://www.fao.org/soils-portal/",
+          "verified": false
+        },
+        {
+          "organisation": "FAO / ITPS",
+          "title": "State of Knowledge of Soil Biodiversity",
+          "year": 2020,
+          "locator": "ch. 4",
+          "url": "https://www.fao.org/documents/card/en/c/cb1928en",
+          "verified": false
+        }
+      ],
+      "search_query": "arbuscular mycorrhiza inoculation phosphorus suppression glomalin aggregate stability",
+      "need_keys": [
+        "soil_carbon_depletion",
+        "nutrient_load"
+      ]
+    }
+  ]
+}

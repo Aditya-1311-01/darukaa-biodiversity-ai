@@ -1,0 +1,61 @@
+{
+  "note": "Expert-labelled site cases. 'acceptable' is the set an environmental scientist would consider defensible for that site; 'must_include' is the non-negotiable fix for the binding constraint.",
+  "cases": [
+    {
+      "name": "semi_arid_monoculture_wheat_depleted_soc",
+      "message": "Biodiversity is declining on my 4 ha wheat plot.",
+      "profile": {"soil_organic_carbon_pct": 0.3, "rainfall_regime": "low", "climate_zone": "semi_arid", "land_use": "monoculture_crop", "current_crop": "wheat", "area_hectares": 4},
+      "acceptable": ["legume_cover_crop", "alley_cropping_agroforestry", "crop_diversification_intercrop", "residue_retention_no_till", "farm_pond_water_harvesting", "mixed_species_shelterbelt"],
+      "must_include": null
+    },
+    {
+      "name": "sodic_degraded_land",
+      "message": "Nothing grows on this patch any more and water sits on the surface.",
+      "profile": {"soil_ph": 9.1, "land_use": "degraded_land", "climate_zone": "semi_arid", "rainfall_regime": "low", "tree_cover_pct": 2},
+      "acceptable": ["gypsum_organic_amendment_sodic", "assisted_natural_regeneration", "alley_cropping_agroforestry", "legume_cover_crop", "native_grass_bund_stabilisation"],
+      "must_include": "gypsum_organic_amendment_sodic"
+    },
+    {
+      "name": "irrigated_paddy_high_inputs",
+      "message": "Rice-wheat system, I spray on a fixed schedule and broadcast all urea at sowing.",
+      "profile": {"land_use": "monoculture_crop", "current_crop": "rice", "climate_zone": "humid", "rainfall_regime": "high", "irrigation_source": "tubewell", "fertiliser_use": "high broadcast urea", "pesticide_use": "calendar spraying", "soil_organic_carbon_pct": 0.9},
+      "acceptable": ["alternate_wetting_drying_rice", "integrated_pest_management", "split_nitrogen_application", "riparian_buffer_strip", "crop_diversification_intercrop"],
+      "must_include": "alternate_wetting_drying_rice"
+    },
+    {
+      "name": "overgrazed_rangeland",
+      "message": "The common grazing land has lost its good grasses and only thorny shrubs are left.",
+      "profile": {"land_use": "grazing_land", "grazing_pressure": "continuous heavy", "climate_zone": "semi_arid", "rainfall_regime": "low", "tree_cover_pct": 3},
+      "acceptable": ["rotational_grazing", "assisted_natural_regeneration", "native_grass_bund_stabilisation", "alley_cropping_agroforestry", "farm_pond_water_harvesting"],
+      "must_include": "rotational_grazing"
+    },
+    {
+      "name": "sandy_low_carbon_plot",
+      "message": "Sandy soil, everything leaches straight through, carbon is very low.",
+      "profile": {"soil_organic_carbon_pct": 0.35, "soil_texture": "sandy", "land_use": "monoculture_crop", "climate_zone": "sub_humid", "rainfall_regime": "medium", "fertiliser_use": "high broadcast"},
+      "acceptable": ["biochar_amendment", "legume_cover_crop", "residue_retention_no_till", "split_nitrogen_application", "mycorrhizal_inoculation", "crop_diversification_intercrop"],
+      "must_include": null
+    },
+    {
+      "name": "peri_urban_degraded",
+      "message": "Vacant municipal land, mostly concrete and a few ornamental trees.",
+      "profile": {"land_use": "peri_urban", "climate_zone": "sub_humid", "rainfall_regime": "medium", "tree_cover_pct": 4, "pollution_note": "stormwater runoff from the road"},
+      "acceptable": ["urban_native_planting_depaving", "native_hedgerow_field_margin", "pollinator_nesting_habitat", "assisted_natural_regeneration", "wetland_restoration_buffer", "riparian_buffer_strip"],
+      "must_include": null
+    },
+    {
+      "name": "orchard_pollination_problem",
+      "message": "Fruit set has been poor for two seasons and I see far fewer bees than before.",
+      "profile": {"land_use": "orchard", "climate_zone": "sub_humid", "rainfall_regime": "medium", "pesticide_use": "routine broad spectrum during bloom", "soil_organic_carbon_pct": 0.8},
+      "acceptable": ["integrated_pest_management", "native_hedgerow_field_margin", "pollinator_nesting_habitat", "legume_cover_crop", "riparian_buffer_strip"],
+      "must_include": "integrated_pest_management"
+    },
+    {
+      "name": "degraded_wetland_edge",
+      "message": "The village pond is choked with water hyacinth and the birds have gone.",
+      "profile": {"land_use": "wetland", "climate_zone": "sub_humid", "rainfall_regime": "medium", "pollution_note": "farm runoff entering the pond", "fertiliser_use": "high in surrounding fields"},
+      "acceptable": ["wetland_restoration_buffer", "riparian_buffer_strip", "split_nitrogen_application", "native_hedgerow_field_margin"],
+      "must_include": "wetland_restoration_buffer"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biodiversity Intelligence — Darukaa.Earth</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="mark" aria-hidden="true"></span>
+    <div>
+      <h1>Biodiversity Intelligence</h1>
+      <p class="sub">Soil, water and habitat reasoning over a grounded knowledge base</p>
+    </div>
+  </div>
+  <dl class="status" id="status">
+    <div><dt>Knowledge</dt><dd id="st-knowledge">checking</dd></div>
+    <div><dt>Retrieval</dt><dd id="st-vector">checking</dd></div>
+    <div><dt>Model</dt><dd id="st-model">checking</dd></div>
+  </dl>
+</header>
+
+<main class="layout">
+
+  <section class="stream" aria-label="Conversation">
+    <div id="messages" class="messages">
+      <article class="msg assistant">
+        <p>Describe the land you are concerned about. Soil test figures, rainfall, current crop or land use, and anything you have noticed about wildlife all help.</p>
+        <p>I will ask for what is missing rather than guess, and I will not recommend anything until at least three environmental variables are on the table.</p>
+      </article>
+    </div>
+
+    <form id="composer" class="composer" autocomplete="off">
+      <label class="sr-only" for="input">Message</label>
+      <textarea id="input" rows="2" placeholder="e.g. Biodiversity is declining on my 4 ha wheat plot, soil organic carbon 0.3%, semi-arid, low rainfall"></textarea>
+      <div class="composer-actions">
+        <button type="button" class="ghost" id="json-toggle">Structured input</button>
+        <button type="button" class="ghost" id="example-btn">Load example site</button>
+        <button type="button" class="ghost" id="reset-btn">New session</button>
+        <button type="submit" class="primary" id="send-btn">Send</button>
+      </div>
+      <div id="json-panel" class="json-panel" hidden>
+        <label for="json-input">JSON merged over anything parsed from the text</label>
+        <textarea id="json-input" rows="6" spellcheck="false">{
+  "soil_organic_carbon_pct": 0.3,
+  "rainfall_regime": "low",
+  "climate_zone": "semi_arid",
+  "land_use": "monoculture_crop",
+  "current_crop": "wheat",
+  "area_hectares": 4
+}</textarea>
+      </div>
+    </form>
+  </section>
+
+  <aside class="side" aria-label="Session state">
+    <section class="panel">
+      <h2>Site profile</h2>
+      <p class="hint" id="profile-hint">Nothing recorded yet. Values persist across turns.</p>
+      <dl id="profile-list" class="profile-list"></dl>
+    </section>
+
+    <section class="panel">
+      <h2>Evidence retrieved</h2>
+      <p class="hint" id="evidence-hint">Passages pulled from the vector store on the last recommendation turn.</p>
+      <ul id="evidence-list" class="evidence-list"></ul>
+    </section>
+  </aside>
+
+</main>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
