@@ -7,9 +7,9 @@ Two collections, deliberately:
                        Used as a semantic *shortlist* before the rule engine
                        does the hard filtering.
 
-If ChromaDB or the embedding model is unavailable (e.g. offline CI), the
-retriever degrades to a transparent keyword scorer so the rest of the system
-still runs and tests still pass.
+If ChromaDB is unavailable (e.g. offline CI), the retriever degrades to a
+transparent keyword scorer so the rest of the system still runs and tests
+still pass.
 """
 from __future__ import annotations
 
@@ -24,7 +24,6 @@ from typing import Any
 from .config import (
     CHROMA_DIR,
     CORPUS_DIR,
-    EMBEDDING_MODEL,
     INTERVENTION_COLLECTION,
     SCIENCE_COLLECTION,
     TOP_K,
@@ -115,9 +114,12 @@ class VectorStore:
 
             CHROMA_DIR.mkdir(parents=True, exist_ok=True)
             self.client = chromadb.PersistentClient(path=str(CHROMA_DIR))
-            self.embed_fn = embedding_functions.SentenceTransformerEmbeddingFunction(
-                model_name=EMBEDDING_MODEL
-            )
+            # ONNX-based, no PyTorch. sentence-transformers pulls in full torch
+            # (800MB+ install, 300-500MB resident just for the model), which
+            # blows the 512MB memory limit on Render's free tier once FastAPI,
+            # ChromaDB and uvicorn are also resident. This default embedding
+            # function does the same job at a fraction of the footprint.
+            self.embed_fn = embedding_functions.DefaultEmbeddingFunction()
             self.ok = True
         except Exception as exc:  # noqa: BLE001
             log.warning("Vector store unavailable (%s). Falling back to keyword search.", exc)
